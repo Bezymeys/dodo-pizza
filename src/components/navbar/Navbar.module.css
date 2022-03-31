@@ -11,3 +11,13 @@
 .navbar > a:hover {
   color: aqua;
 }
+
+.modal {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.activeModal {
+  opacity: 1;
+  visibility: visible;
+}

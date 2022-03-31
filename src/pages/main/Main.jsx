@@ -2,8 +2,35 @@ import css from "./Main.module.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import PizzaCard from "../../components/pizza-card/PizzaCard.jsx";
 
 export default function Main() {
+  const pizzaArray = [
+    {
+      title: "1 Сыр",
+      description: "Соберите свою пиццу 35 см с двумя разными вкусами",
+      price: 390,
+    },
+    {
+      title: "2 Сыра",
+      description: "Соберите свою пиццу 35 см с двумя разными вкусами",
+      price: 390,
+      img: "https://mevishcafe.com.ng/wp-content/uploads/2021/08/Pizza.jpg"
+    },
+    {
+      title: "3 Сыра",
+      description: "Соберите свою пиццу 35 см с двумя разными вкусами",
+      price: 390,
+    },
+    {
+      title: "4 Сыра",
+      description: "Соберите свою пиццу 35 см с двумя разными вкусами",
+      price: 390,
+      img: "https://mevishcafe.com.ng/wp-content/uploads/2021/08/Pizza.jpg"
+    }
+  ];
+
+
   const settings = {
     dots: false,
     infinite: true,
@@ -35,7 +62,14 @@ export default function Main() {
           </div>
         </Slider>
       </div>
-      <div>All pizzas</div>
+      <div className="container mt-5 mb-5">
+        <h1>ПИЦЦА</h1>
+        <div className={css.pizzaWrapper}>
+          {
+            pizzaArray.map((item) => <PizzaCard {...item} />)
+          }
+        </div>
+      </div>
     </div>
   )
 };
