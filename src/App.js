@@ -7,11 +7,30 @@ import About from './pages/about/About.jsx';
 import Footer from './components/footer/Footer.jsx';
 
 function App() {
+  const pizzaArray = [
+    {
+      title: "2 Сыра",
+      description: "Соберите свою пиццу 35 см с двумя разными вкусами",
+      price: 390,
+      img: "https://mevishcafe.com.ng/wp-content/uploads/2021/08/Pizza.jpg"
+    },
+    {
+      title: "3 Сыра",
+      description: "Соберите свою пиццу 35 см с двумя разными вкусами",
+      price: 390,
+    },
+    {
+      title: "4 Сыра",
+      description: "Соберите свою пиццу 35 см с двумя разными вкусами",
+      price: 390,
+      img: "https://mevishcafe.com.ng/wp-content/uploads/2021/08/Pizza.jpg"
+    }
+  ];
   return (
     <div className="App">
       <BrowserRouter>
         <Header />
-        <Navbar />
+        <Navbar basket={pizzaArray} />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/about-us" element={<About />} />
