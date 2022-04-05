@@ -5,34 +5,30 @@ import Navbar from './components/navbar/Navbar.jsx';
 import Main from './pages/main/Main.jsx';
 import About from './pages/about/About.jsx';
 import Footer from './components/footer/Footer.jsx';
+import { useEffect, useState } from 'react';
 
 function App() {
-  const pizzaArray = [
-    {
-      title: "2 Сыра",
-      description: "Соберите свою пиццу 35 см с двумя разными вкусами",
-      price: 390,
-      img: "https://mevishcafe.com.ng/wp-content/uploads/2021/08/Pizza.jpg"
-    },
-    {
-      title: "3 Сыра",
-      description: "Соберите свою пиццу 35 см с двумя разными вкусами",
-      price: 390,
-    },
-    {
-      title: "4 Сыра",
-      description: "Соберите свою пиццу 35 см с двумя разными вкусами",
-      price: 390,
-      img: "https://mevishcafe.com.ng/wp-content/uploads/2021/08/Pizza.jpg"
-    }
-  ];
+  const [basket, setBasket] = useState([]);
+  const addToBasket = (pizza) => {
+    setBasket([...basket,  pizza]);
+  };
+
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("basket"));
+    setBasket(data);
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem("basket", JSON.stringify(basket))
+  }, [basket])
+
   return (
     <div className="App">
       <BrowserRouter>
         <Header />
-        <Navbar basket={pizzaArray} />
+        <Navbar basket={basket} />
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={<Main addToBasket={addToBasket} />} />
           <Route path="/about-us" element={<About />} />
         </Routes>
         <Footer />

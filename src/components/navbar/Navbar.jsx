@@ -8,7 +8,7 @@ export default function Navbar({ basket }) {
   const getAllPrice = () => {
     let price = 0;
     basket.forEach((item) => {
-      price = item.price + price
+      price = Number(item.price) + price
     })
     return price
   }
@@ -21,7 +21,7 @@ export default function Navbar({ basket }) {
         <Link to="/">Пицца</Link>
         <Link to="/about-us">О нас</Link>
 
-        <button onClick={onModal}>Корзина</button>
+        <button onClick={onModal}>Корзина | {basket.length}</button>
 
 
       </div>
@@ -34,6 +34,12 @@ export default function Navbar({ basket }) {
             alt="Close" 
           />
           <h2>{basket.length} товара на {getAllPrice()} сом</h2>
+
+          <div>
+            {
+              basket.map((item) => <div>{item.name}</div>)
+            }
+          </div>
         </div>
       </div>
     </>

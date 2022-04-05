@@ -3,33 +3,17 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import PizzaCard from "../../components/pizza-card/PizzaCard.jsx";
+import { useEffect, useState } from "react";
+import { baseUrl, pizzaApi } from "../../constants/api.js";
 
-export default function Main() {
-  const pizzaArray = [
-    {
-      title: "1 Сыр",
-      description: "Соберите свою пиццу 35 см с двумя разными вкусами",
-      price: 390,
-    },
-    {
-      title: "2 Сыра",
-      description: "Соберите свою пиццу 35 см с двумя разными вкусами",
-      price: 390,
-      img: "https://mevishcafe.com.ng/wp-content/uploads/2021/08/Pizza.jpg"
-    },
-    {
-      title: "3 Сыра",
-      description: "Соберите свою пиццу 35 см с двумя разными вкусами",
-      price: 390,
-    },
-    {
-      title: "4 Сыра",
-      description: "Соберите свою пиццу 35 см с двумя разными вкусами",
-      price: 390,
-      img: "https://mevishcafe.com.ng/wp-content/uploads/2021/08/Pizza.jpg"
-    }
-  ];
+export default function Main({ addToBasket }) {
+  const [pizzas, setPizzas] = useState([]);
 
+  useEffect(() => {
+    fetch(baseUrl + pizzaApi)
+      .then((response) => response.json())
+      .then((data) => setPizzas(data))
+  }, []);
 
   const settings = {
     dots: false,
@@ -66,7 +50,7 @@ export default function Main() {
         <h1>ПИЦЦА</h1>
         <div className={css.pizzaWrapper}>
           {
-            pizzaArray.map((item) => <PizzaCard {...item} />)
+            pizzas.map((item) => <PizzaCard key={item.id} {...item} addToBasket={addToBasket} />)
           }
         </div>
       </div>
