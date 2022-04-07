@@ -1,0 +1,9 @@
+.addPizza {
+  border: 2px solid black;
+  padding: 20px;
+  width: 18rem;
+}
+
+.addPizza > img {
+  width: 100%;
+}

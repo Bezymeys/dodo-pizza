@@ -6,6 +6,8 @@ import Main from './pages/main/Main.jsx';
 import About from './pages/about/About.jsx';
 import Footer from './components/footer/Footer.jsx';
 import { useEffect, useState } from 'react';
+import Admin from './pages/admin/Admin.jsx';
+import Dashboard from './pages/dashboard/Dashboard.jsx';
 
 function App() {
   const [basket, setBasket] = useState([]);
@@ -14,7 +16,7 @@ function App() {
   };
 
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("basket"));
+    const data = JSON.parse(localStorage.getItem("basket")) || [];
     setBasket(data);
   }, [])
 
@@ -30,6 +32,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Main addToBasket={addToBasket} />} />
           <Route path="/about-us" element={<About />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
         <Footer />
       </BrowserRouter>

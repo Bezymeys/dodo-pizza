@@ -1,7 +1,7 @@
 
 
 
-export default function PizzaCard({ addToBasket,title, name, description, img, id, ...props }) { 
+export default function PizzaCard({ addToBasket,title, name, description, img, id, isAdmin, ...props }) { 
 
   const onBasket = () => {
     addToBasket({title, name, description, img, id, ...props })
@@ -15,7 +15,11 @@ export default function PizzaCard({ addToBasket,title, name, description, img, i
           <h5 className="card-title">{title || name}</h5>
           <h5 className="card-title">{props.price} сомов</h5>
           <p className="card-text">{description}</p>
-          <a href="#" onClick={onBasket} className="btn btn-primary">Выбрать</a>
+          {
+            isAdmin 
+              ? <a href="#" className="btn btn-primary">Изменить</a>
+              : <a href="#" onClick={onBasket} className="btn btn-primary">Выбрать</a>
+          }          
         </div>
     </div>
   )

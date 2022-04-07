@@ -1,0 +1,8 @@
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 0 auto;
+  grid-gap: 15px;
+}
