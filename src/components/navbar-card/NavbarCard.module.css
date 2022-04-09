@@ -1,0 +1,10 @@
+.top_block img{
+    height: 50px;
+}
+.top_block{
+    display: flex;
+}
+.price{
+    display: flex;
+    justify-content: space-between;
+}

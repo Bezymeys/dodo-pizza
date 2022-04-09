@@ -1,18 +1,55 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Navbarcard from "../navbar-card/NavbarCard";
 import css from "./Navbar.module.css";
 
-export default function Navbar() {
+export default function Navbar({basket}) {
   const [modal, setModal] = useState(false);
 
+  const getAllPrice = () => {
+    let price = 0;
+    basket.forEach((item)=>{
+      price= item.price + price
+    })
+    return price
+  }
+
+  const onModal = () => setModal(!modal);
+
   return (
-    <div className={`container ${css.navbar}`}>
-      <Link to="/">Пицца</Link>
-      <Link to="/about-us">О нас</Link>
+    <>
+      <div className={css.color}>
+        <div className={`container ${css.navbar}`}>
+          <Link to="/">Пицца</Link>
+          <Link to="/about-us">О нас</Link>
 
-      <button onClick={() => setModal(!modal)}>Корзина</button>
+          <button onClick={onModal}>Корзина | {basket.length}</button>
 
-      <div className={modal ? css.activeModal : css.modal}>Modal</div>
-    </div>
+        </div>
+      </div>
+      <div className={`"slider single-item" ${css.modal} ${modal ? css.activeModal : ""}`}>
+          <div className={css.basketWrapper}>
+            <img
+              onClick={onModal}
+              className={css.closeModal}
+              // src="https://cdn-icons-png.flaticon.com/512/458/458595.png"
+              src="https://img.icons8.com/ios-filled/500/volkswagen.png"
+              alt="Close"
+            />
+            <h2>{basket.length} товара на {getAllPrice} сом</h2>
+
+            <div>
+            {
+              basket.map((item) => <Navbarcard
+              description={item.description}
+              img={item.img}
+              title={item.title}
+              price={item.price}
+              />)
+            }
+          </div>
+          </div>
+        </div>
+    </>
   )
 };

@@ -1,0 +1,46 @@
+.icon img{
+    width: 50px;
+    margin-right: 20px;
+}
+.dot{
+    height: 3px;
+    width: 3px;
+    border-radius: 100px;
+    background-color: black;
+    margin-top: 10px;
+}
+.raite img{
+    width: 20px;
+}
+.delivery{
+    display: flex;
+    flex-direction: column;
+}
+.raite{
+    display: flex;
+    grid-gap: 0.5em;
+}
+.left_block{
+    display: flex;
+    grid-gap: 2em;
+}
+.right_block{
+    display: flex;
+    grid-gap: 3em;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+.join{
+    display: flex;
+    align-items: center;
+}
+.join button{
+    width: 140px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    background-color: #ff6900;
+}

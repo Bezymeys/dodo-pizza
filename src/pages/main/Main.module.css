@@ -1,9 +1,3 @@
 .slider {
   background-color: bisque;
 }
-.pizzaWrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  grid-gap: 1em;
-}
