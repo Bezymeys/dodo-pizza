@@ -8,6 +8,7 @@ import Footer from './components/footer/Footer.jsx';
 import { useEffect, useState } from 'react';
 import Admin from './pages/admin/Admin.jsx';
 import Dashboard from './pages/dashboard/Dashboard.jsx';
+import CreatePizza from './pages/create-pizza/CreatePizza.jsx';
 
 function App() {
   const [basket, setBasket] = useState([]);
@@ -34,6 +35,7 @@ function App() {
           <Route path="/about-us" element={<About />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/create-pizza" element={<CreatePizza />} />
         </Routes>
         <Footer />
       </BrowserRouter>
