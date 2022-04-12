@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .add_pizza{
     display: flex;
     flex-direction: column;
@@ -37,4 +38,23 @@ justify-content: center;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+=======
+.imageDowload {
+  border: 2px dashed rgb(202, 202, 202);
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.inputWrapper {
+  margin: 15px 0;
+  display: grid;
+  width: 350px;
+}
+.inputWrapper input {
+  padding: 5px;
+>>>>>>> d7a56aded6841d73b7ba1505428fbf680485c908
 }

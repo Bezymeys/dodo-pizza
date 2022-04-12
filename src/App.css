@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *{
   transition: all 0.5s linear;
 }
@@ -7,3 +8,11 @@
     justify-content: space-between;
     grid-gap: 1em;
   }
+=======
+.pizzaWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  grid-gap: 1em;
+}
+>>>>>>> d7a56aded6841d73b7ba1505428fbf680485c908

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbarcard from "../navbar-card/NavbarCard";
 import css from "./Navbar.module.css";
@@ -9,7 +9,11 @@ export default function Navbar({ basket }) {
   const getAllPrice = () => {
     let price = 0;
     basket.forEach((item) => {
+<<<<<<< HEAD
       price = item.price + price
+=======
+      price = Number(item.price) + price
+>>>>>>> d7a56aded6841d73b7ba1505428fbf680485c908
     })
     return price
   }
@@ -18,6 +22,7 @@ export default function Navbar({ basket }) {
 
   return (
     <>
+<<<<<<< HEAD
       <div className={css.color}>
         <div className={`container mt-3 mb-3 ${css.navbar}`}>
           <div className={css.link}>
@@ -56,6 +61,29 @@ export default function Navbar({ basket }) {
                 title={item.title}
                 price={item.price}
               />)
+=======
+      <div className={`container ${css.navbar}`}>
+        <Link to="/">Пицца</Link>
+        <Link to="/about-us">О нас</Link>
+
+        <button onClick={onModal}>Корзина | {basket.length}</button>
+
+
+      </div>
+      <div className={`${css.modal} ${modal ? css.activeModal : ""}`}>
+        <div className={css.basketWrapper}>
+          <img 
+            onClick={onModal}
+            className={css.closeModal} 
+            src="https://cdn-icons-png.flaticon.com/512/458/458594.png" 
+            alt="Close" 
+          />
+          <h2>{basket.length} товара на {getAllPrice()} сом</h2>
+
+          <div>
+            {
+              basket.map((item) => <div>{item.name}</div>)
+>>>>>>> d7a56aded6841d73b7ba1505428fbf680485c908
             }
           </div>
         </div>

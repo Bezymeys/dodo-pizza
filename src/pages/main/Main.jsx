@@ -43,7 +43,10 @@ export default function Main({ addToBasket, pizzas }) {
         <h1>ПИЦЦА</h1>
         <div className={"pizzaWrapper"}>
           {
+<<<<<<< HEAD
             
+=======
+>>>>>>> d7a56aded6841d73b7ba1505428fbf680485c908
             pizzas?.map((item) => <PizzaCard key={item.id} {...item} addToBasket={addToBasket} />)
           }
         </div>

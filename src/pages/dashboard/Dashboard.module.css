@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .addPizza{
     width: 18rem;
     border: 1px solid black;
@@ -6,4 +7,14 @@
 }
 .addPizza img{
     width: 100%;
+=======
+.addPizza {
+  border: 2px solid black;
+  padding: 20px;
+  width: 18rem;
+}
+
+.addPizza > img {
+  width: 100%;
+>>>>>>> d7a56aded6841d73b7ba1505428fbf680485c908
 }
