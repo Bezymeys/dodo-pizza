@@ -38,7 +38,7 @@ const Admin = () => {
                     placeholder="Password"
                     onChange={passChange}
                 />
-                <div onClick={() => setPasswordType(!passwordType)}>Show</div>
+                <div className={css.btn} onClick={() => setPasswordType(!passwordType)}>Show</div>
                 <button>Enter</button>
             </form>
         </div>

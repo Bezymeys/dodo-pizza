@@ -8,23 +8,23 @@ export default function Footer() {
         <div className={css.top}>
           <div className={css.link}>
             <h3>Додо Пицца</h3>
-            <Link>О нас</Link>
-            <Link></Link>
-            <Link>Блог "Сила ума"</Link>
-            <Link>Додо ИС</Link>
+            <Link to=''>О нас</Link>
+            <Link to=''></Link>
+            <Link to=''>Блог "Сила ума"</Link>
+            <Link to=''>Додо ИС</Link>
           </div>
           <div className={css.link}>
             <h3>Работа</h3>
-            <Link>В пиццерии</Link>
+            <Link to=''>В пиццерии</Link>
           </div>
           <div className={css.link}>
             <h3>Партнерам</h3>
-            <Link>Предложить помещение</Link>
+            <Link to=''>Предложить помещение</Link>
           </div>
           <div className={css.link}>
             <h3>Это интересно</h3>
-            <Link>Почему мы готовим без перчаток?</Link>
-            <Link>Экскурсии и мастер-классы</Link>
+            <Link to=''>Почему мы готовим без перчаток?</Link>
+            <Link to=''>Экскурсии и мастер-классы</Link>
           </div>
           <div className={css.feedback}>
             <div className={css.phone}>

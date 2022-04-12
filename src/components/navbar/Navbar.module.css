@@ -1,13 +1,28 @@
 .navbar {
-  height: 50px;
+  height: 60px;
   display: flex;
   align-items: center;
   grid-gap: 3em;
+  justify-content: space-between;
 }
-
-.navbar>a {
+.link{
+  display: flex;
+  grid-gap: 2em;
+}
+.link a {
   text-decoration: none;
   color: black;
+}
+.link a:hover{
+  color: #ff6900;
+}
+.btn button{
+  border: none;
+  border-radius: 20px;
+  height: 40px;
+  width: 140px;
+    color: white;
+    background-color: #ff6900;
 }
 
 .navbar>a:hover {

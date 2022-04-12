@@ -1,30 +1,12 @@
-// import React from 'react';
+import css from './SliderCard.module.css'
 
-// const Slidercard = () => {
-//   // const ArraySliderCArd = [
-//   //   {
-//   //     img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdFqDhnfd2Xk2swLkJNbInqz0ptIDoAZ-KKQ&usqp=CAU",
-//   //     title:"Новая модель"
-//   //   },
-//   //   {
-//   //     img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdFqDhnfd2Xk2swLkJNbInqz0ptIDoAZ-KKQ&usqp=CAU",
-//   //     title:"Новая модель"
-//   //   },
-//   //   {
-//   //     img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdFqDhnfd2Xk2swLkJNbInqz0ptIDoAZ-KKQ&usqp=CAU",
-//   //     title:"Новая модель"
-//   //   },
-//   //   {
-//   //     img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdFqDhnfd2Xk2swLkJNbInqz0ptIDoAZ-KKQ&usqp=CAU",
-//   //     title:"Новая модель"
-//   //   },
-//   // ]
-//   return (
-//     <div>
-//         <img src={img} alt="" />  
-//         <p>{title}</p>
-//     </div>
-//   )
-// }
+const Slidercard = () => {
+  return (
+    <div className={css.card}>
+        <div className={css.img}></div>
+        <p className={css.title}>{"Новая модель"}</p>
+    </div>
+  )
+}
 
-// export default Slidercard;
+export default Slidercard;

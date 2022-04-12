@@ -1,0 +1,21 @@
+.card{
+    position: relative;
+    height: 260px;
+    width: 200px;
+    border-radius: 20px;
+    background-color: orange;
+}
+.img{
+    height: 100%;
+    width: 100%;
+    background-position:  center;
+    background-repeat: no-repeat;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdFqDhnfd2Xk2swLkJNbInqz0ptIDoAZ-KKQ&usqp=CAU");
+}
+.title{
+    color: white;
+    z-index: 2;
+    position: absolute;
+    bottom: 0;  
+    left: 50px;
+}

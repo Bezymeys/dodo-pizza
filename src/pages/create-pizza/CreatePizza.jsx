@@ -1,5 +1,9 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { baseUrl, pizzaApi } from '../../constants/api';
 import css from './CreatePizza.module.css'
+import axios from 'axios';
+import { Api } from '../../api/Api';
 
 const Createpizza = () => {
     const [title, setTitle] = useState("")
@@ -8,9 +12,28 @@ const Createpizza = () => {
     const [image, setImage] = useState(null)
     const [imageUrl, setImageUrl] = useState("")
 
+
+    const navigate = useNavigate();
+
+
     const submit = (e) => {
         e.preventDefault();
-        console.log(title, price, des);
+        const formData = new FormData();
+        formData.append("title", title)
+        formData.append("price", price)
+        formData.append("des", des)
+        formData.append("img", image);
+        // fetch(baseUrl + pizzaApi, {
+        //     method: "POST",
+        //     body: formData,
+        // })
+        //     .finally(() => {
+        //     navigate("/dashboard")
+        //     })
+        Api.post(pizzaApi, {title, price, des} )
+            .finally(() => {
+                navigate("/dashboard")
+            })
     }
 
     const titleChange = (e) => {
@@ -34,6 +57,7 @@ const Createpizza = () => {
             setImageUrl(e.target.result)
         };
     }
+
     const urlDownload = 'https://cdn-icons-png.flaticon.com/512/1092/1092004.png'
     return (
         <form onSubmit={submit} className={`container mt-5 mb-5 ${css.add_pizza}`}>
@@ -57,7 +81,7 @@ const Createpizza = () => {
                     onChange={titleChange} />
                 <h4>Price</h4>
                 <input
-                    type="text"
+                    type="number"
                     placeholder='Please enter the price for pizza'
                     value={price}
                     onChange={priceChange} />

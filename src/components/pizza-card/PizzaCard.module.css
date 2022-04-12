@@ -1,0 +1,37 @@
+.card{
+    width: 220px;
+    height: 450px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 0.5em;
+}
+.card img{
+    width: 300px;
+}
+.title{
+    font-size: 20px;
+}
+.des{
+    font-size: 14px;
+    color: gray;
+}
+.btm_block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.price{
+   font-size: 16px;
+}
+.btn{
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(255, 240, 230);
+    color: rgb(209, 87, 0);
+}
+.btn:hover{
+    background-color: rgb(226, 200, 183); ;
+}

@@ -5,3 +5,6 @@
     margin: 0 auto;
     grid-gap: 15px;
 }
+.btn{
+    cursor: pointer;
+}

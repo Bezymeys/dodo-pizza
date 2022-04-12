@@ -1,6 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
 .icon img{
     width: 50px;
     margin-right: 20px;
+}
+.icon a{
+    text-decoration: none;
+    color: black;
+    font-size: 32px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    line-height: 0.7;
+    
+}
+.delivery span{
+    font-size: 15px;
+    align-items: center;
+    display: flex;
+    grid-gap: 0.5em;
+}
+.delivery p{
+    margin: 0;
+    font-size: 18px;
 }
 .dot{
     height: 3px;
@@ -12,10 +42,6 @@
 .raite img{
     width: 20px;
 }
-.delivery{
-    display: flex;
-    flex-direction: column;
-}
 .raite{
     display: flex;
     grid-gap: 0.5em;
@@ -23,14 +49,39 @@
 .left_block{
     display: flex;
     grid-gap: 2em;
+    align-items: center;
 }
 .right_block{
     display: flex;
     grid-gap: 3em;
+    align-items: center;
 }
-.header{
+.phone{
     display: flex;
-    justify-content: space-between;
+    flex-direction:column;
+    margin-top: 0 auto;
+}
+.phone p{
+    font-size: 18px;
+    margin: 0;
+    cursor: pointer;
+}
+.phone span{
+    color: rgb(153, 153, 153);
+    font-size: 15px;
+}
+.coin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+.coin:hover{
+    color: #ff6900;
+}
+.coin p{
+    font-size: 14px;
+    margin: 0;
 }
 .join{
     display: flex;

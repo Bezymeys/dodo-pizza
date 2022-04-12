@@ -9,38 +9,48 @@ import { useEffect, useState } from 'react';
 import Admin from './pages/admin/Admin';
 import Dashboard from './pages/dashboard/Dashboard';
 import Createpizza from './pages/create-pizza/CreatePizza';
+import { Api } from './api/Api';
+import { pizzaApi } from './constants/api';
 
 function App() {
-  const [basket, setBasket] = useState([]);
-  const addToBasket = (pizza) => {
-    setBasket([...basket,  pizza]);
-  };
+    const [basket, setBasket] = useState([]);
+    const [pizzas, setPizzas] = useState([]);
 
-  useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("basket")) || [];
-    setBasket(data);
-  }, [])
+    const addToBasket = (pizza) => {
+      setBasket([...basket, pizza]);
+    };
 
-  useEffect(() => {
-    localStorage.setItem("basket", JSON.stringify(basket))
-  }, [basket])
+    useEffect(() => {
+      const data = JSON.parse(localStorage.getItem("basket")) || [];
+      setBasket(data);
+      Api.get(pizzaApi)
+        .then((res) => {
+          setPizzas(res.data);
+        })
+    }, [])
 
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Header />
-        <Navbar basket={basket} />
-        <Routes>
-          <Route path="/" element={<Main addToBasket={addToBasket} />} />
-          <Route path="/about-us" element={<About />} />
-          <Route path="/admin" element={<Admin/>} />
-          <Route path="/dashboard" element={<Dashboard/>} />
-          <Route path='/create-pizza' element={<Createpizza/>}/>
-        </Routes>
-        {/* <Footer /> */}
-      </BrowserRouter>
-    </div>
-  );
-}
+
+
+    useEffect(() => {
+      localStorage.setItem("basket", JSON.stringify(basket))
+    }, [basket])
+
+    return (
+      <div className="App">
+        <BrowserRouter>
+          <Header />
+          <Navbar basket={basket} />
+          <Routes>
+            <Route path="/" element={<Main addToBasket={addToBasket} pizzas={pizzas}  />} />
+            <Route path="/about-us" element={<About />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/dashboard" element={<Dashboard  pizzas={pizzas} />} />
+            <Route path='/create-pizza' element={<Createpizza />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </div>
+    );
+  }
 
 export default App;
