@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { baseUrl, pizzaApi } from "../../constants/api.js";
 import css from "./CreatePizza.module.css"
+import { Api } from "../../api/Api.js";
 
 export default function CreatePizza() {
   const [name, setName] = useState("");
@@ -19,14 +20,18 @@ export default function CreatePizza() {
     formData.append("price", price)
     formData.append("description", description)
     formData.append("img", image);
-    fetch(baseUrl + pizzaApi, {
-      method: "POST",
-      body: formData
-    })
+    // fetch(baseUrl + pizzaApi, {
+    //   method: "POST",
+    //   body: formData
+    // })
+    //   .finally(() => {
+    //     navigate("/dashboard")
+    //   })
+
+    Api.post(pizzaApi, {name, price, description})
       .finally(() => {
         navigate("/dashboard")
       })
-
   }
 
   const nameChange = (e) => {

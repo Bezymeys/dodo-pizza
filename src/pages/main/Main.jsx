@@ -3,17 +3,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import PizzaCard from "../../components/pizza-card/PizzaCard.jsx";
-import { useEffect, useState } from "react";
-import { baseUrl, pizzaApi } from "../../constants/api.js";
 
-export default function Main({ addToBasket }) {
-  const [pizzas, setPizzas] = useState([]);
-
-  useEffect(() => {
-    fetch(baseUrl + pizzaApi)
-      .then((response) => response.json())
-      .then((data) => setPizzas(data))
-  }, []);
+export default function Main({ addToBasket, pizzas }) {
 
   const settings = {
     dots: false,
@@ -50,7 +41,7 @@ export default function Main({ addToBasket }) {
         <h1>ПИЦЦА</h1>
         <div className={"pizzaWrapper"}>
           {
-            pizzas.map((item) => <PizzaCard key={item.id} {...item} addToBasket={addToBasket} />)
+            pizzas?.map((item) => <PizzaCard key={item.id} {...item} addToBasket={addToBasket} />)
           }
         </div>
       </div>

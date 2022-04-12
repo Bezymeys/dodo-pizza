@@ -9,9 +9,13 @@ import { useEffect, useState } from 'react';
 import Admin from './pages/admin/Admin.jsx';
 import Dashboard from './pages/dashboard/Dashboard.jsx';
 import CreatePizza from './pages/create-pizza/CreatePizza.jsx';
+import { Api } from './api/Api.js';
+import { pizzaApi } from './constants/api.js';
 
 function App() {
   const [basket, setBasket] = useState([]);
+  const [pizzas, setPizzas] = useState([]);
+
   const addToBasket = (pizza) => {
     setBasket([...basket,  pizza]);
   };
@@ -19,6 +23,11 @@ function App() {
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("basket")) || [];
     setBasket(data);
+    
+    Api.get(pizzaApi) 
+    .then((res) => {
+      setPizzas(res.data)
+    })
   }, [])
 
   useEffect(() => {
@@ -31,10 +40,10 @@ function App() {
         <Header />
         <Navbar basket={basket} />
         <Routes>
-          <Route path="/" element={<Main addToBasket={addToBasket} />} />
+          <Route path="/" element={<Main addToBasket={addToBasket} pizzas={pizzas} />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/admin" element={<Admin />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard pizzas={pizzas} />} />
           <Route path="/create-pizza" element={<CreatePizza />} />
         </Routes>
         <Footer />
