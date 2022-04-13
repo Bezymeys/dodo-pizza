@@ -1,0 +1,108 @@
+.color{
+    background-color: #181818;
+}
+.footer{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+}
+.link{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-weight: 400;
+    grid-gap: 0.5em;
+}
+.link a{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    opacity: 0.6;
+    font-weight: 300;
+}
+.link a:hover{
+    opacity: 1;
+}
+.feedback{
+    display: flex;
+    justify-content: flex-end;
+}
+.between{
+    display: flex;
+    grid-gap: 0.4em;
+    flex-direction: column;
+}
+.phone {
+    color: white;
+    display: flex;
+    opacity: 0.6;
+    font-size: 16px;
+    grid-gap: 0.4em;
+    justify-content: flex-end;
+}
+.number{
+    display: flex;
+    justify-content: flex-end;
+}
+.number p{
+    color: white;
+    margin: 0;
+    font-size: 26px;
+}
+.mail a{
+    color: white;
+    text-decoration: none;
+    opacity: 0.6;
+    display: flex;
+    justify-content: flex-end;
+}
+.mail:hover{opacity: 1;}
+.bottom{
+    margin-top: 80px;
+    display: flex;
+    justify-content: flex-end;
+}
+.right{
+    display: flex;
+    justify-content: flex-end;
+    color: #ffffff;
+    opacity: 0.6;
+    font-size: 16px;
+    font-weight: 300;
+}
+.hr{color: white;}
+.next_bottom{
+    display: flex;
+    justify-content: space-between;
+}
+.first_block{
+    display: flex;
+    grid-gap: 1em;
+    color: white;
+    opacity: 0.6;
+}
+.first_block a{
+    text-decoration: none;
+    color: white;
+    opacity: 0.6;
+}
+.first_block a:hover{
+    opacity: 1;
+}
+.second_block{
+    display: flex;
+    grid-gap: 0.5em;
+}
+.btn{
+    border: none;
+    width: 32px;
+    height: 32px;
+    background-color: rgba(255, 255, 255, 0.122);;
+    border-radius: 5px;
+}
+.btn img{
+    filter: invert(80%);
+}

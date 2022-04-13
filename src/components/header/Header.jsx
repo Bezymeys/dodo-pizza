@@ -24,7 +24,7 @@ export default function Header() {
       </div>
       <div className={css.right_block}>
         <div className={css.coin}>
-          <img width={'24px'} src="https://cdn-icons-png.flaticon.com/512/5167/5167302.png" alt="#" />
+          <img width={'24px'} src="https://cdn-user-icons.flaticon.com/68874/68874891/1649862899033.svg?token=exp=1649863800~hmac=6b46a4a6807b219ceb6d910a2d033875" alt="#" />
           <p>Додокоины</p>
         </div>
         <div className={css.join}>

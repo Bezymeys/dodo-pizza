@@ -7,57 +7,58 @@ export default function Footer() {
       <div className={`container ${css.footer}`}>
         <div className={css.top}>
           <div className={css.link}>
-            <h3>Додо Пицца</h3>
+            <span>Додо Пицца</span>
             <Link to=''>О нас</Link>
-            <Link to=''></Link>
+            <Link to=''>Додо-книга</Link>
             <Link to=''>Блог "Сила ума"</Link>
             <Link to=''>Додо ИС</Link>
           </div>
           <div className={css.link}>
-            <h3>Работа</h3>
+            <span>Работа</span>
             <Link to=''>В пиццерии</Link>
           </div>
           <div className={css.link}>
-            <h3>Партнерам</h3>
+            <span>Партнерам</span>
             <Link to=''>Предложить помещение</Link>
           </div>
           <div className={css.link}>
-            <h3>Это интересно</h3>
+            <span>Это интересно</span>
             <Link to=''>Почему мы готовим без перчаток?</Link>
             <Link to=''>Экскурсии и мастер-классы</Link>
           </div>
           <div className={css.feedback}>
-            <div className={css.phone}>
-              <h4>звонок по </h4>
-              <button><img src="https://dodopizza-a.akamaihd.net/static/Img/CallCenterIcons/35a3090c0e41458086520f78ab9f892f.svg" alt="" /></button>
-              <button><img src="https://dodopizza-a.akamaihd.net/static/Img/CallCenterIcons/092d276870e24dacaeb098fb1768d585.svg" alt="" /></button>
-              <button><img src="https://dodopizza-a.akamaihd.net/static/Img/CallCenterIcons/d2a8e028a02042b6b72ff780d9fdbdd8.svg" alt="" /></button>
-              <button></button>
-            </div>
-            <div className={css.number}>
-              <button>0 (551) 550-550</button>
-            </div>
-            <div className={css.mail}>
-              <button>feedback@dodopizza.kg</button>
+            <div className={css.between}>
+              <div className={css.phone}>
+                <span>звонок по </span>
+                <Link to=""><img width={"20px"} src="https://dodopizza-a.akamaihd.net/static/Img/CallCenterIcons/35a3090c0e41458086520f78ab9f892f.svg" alt="" /></Link>
+                <Link to=""><img width={"20px"} src="https://dodopizza-a.akamaihd.net/static/Img/CallCenterIcons/092d276870e24dacaeb098fb1768d585.svg" alt="" /></Link>
+                <Link to=""><img width={"20px"} src="https://dodopizza-a.akamaihd.net/static/Img/CallCenterIcons/d2a8e028a02042b6b72ff780d9fdbdd8.svg" alt="" /></Link>
+              </div>
+              <div className={css.number}>
+                <p>0 (551) 550-550</p>
+              </div>
+              <div className={css.mail}>
+                <Link to=""><p>feedback@dodopizza.kg</p></Link>
+              </div>
             </div>
           </div>
         </div>
         <div className={css.bottom}>
-          <p>Принимаем к оплате</p>
-          <div className={css.image}>
-            <img src="https://dodopizza-a.akamaihd.net/site-static/dist/aec84a569e79a4696301.png" alt="" />
+          <div className={css.between}>
+            <span className={css.right}>Принимаем к оплате</span>
+            <img width="240px" src="https://dodopizza-a.akamaihd.net/site-static/dist/aec84a569e79a4696301.png" alt="" />
           </div>
         </div>
-        <hr />
+        <hr className={css.hr} />
         <div className={css.next_bottom}>
           <div className={css.first_block}>
-            <h1>DODO PIZZA</h1>
-            <p>&copy 2022</p>
-            <h3>Правовая информация</h3>
+            <span>DODO PIZZA</span>
+            <span>&copy; 2022 </span>
+            <Link to=''>Правовая информация</Link>
           </div>
           <div className={css.second_block}>
-          <button><img src="#" alt="#" /></button>
-          <button><img src="#" alt="#" /></button>
+            <button className={css.btn}><img width={"15px"} src="https://cdn-icons-png.flaticon.com/512/1051/1051309.png" alt="facebook" /></button>
+            <button className={css.btn}><img width={"15px"} src="https://cdn-icons-png.flaticon.com/512/1384/1384089.png" alt="instagram" /></button>
           </div>
         </div>
       </div>

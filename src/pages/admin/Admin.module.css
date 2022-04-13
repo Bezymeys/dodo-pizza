@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .formWrapper{
     display: flex;
     flex-direction: column;
@@ -8,13 +7,4 @@
 }
 .btn{
     cursor: pointer;
-=======
-
-.formWrapper {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  margin: 0 auto;
-  grid-gap: 15px;
->>>>>>> d7a56aded6841d73b7ba1505428fbf680485c908
 }

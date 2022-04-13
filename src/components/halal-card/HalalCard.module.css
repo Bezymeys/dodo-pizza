@@ -1,0 +1,19 @@
+.halal{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.halal1{
+    display: flex;
+    grid-gap: 1em;
+}
+.block{
+    display: flex;
+    flex-direction: column;
+}
+.block p{
+    margin: 0;
+}
+.block span{
+    opacity: 0.5;
+}

@@ -1,0 +1,15 @@
+.card{
+    width: 300;
+    height: 120px;
+    box-shadow: rgb(6 5 50 / 15%) 0px 4px 22px -6px;
+    border-radius: 12px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    grid-gap: 1em;
+}
+.block{
+    display: flex;
+    flex-direction: column;
+}

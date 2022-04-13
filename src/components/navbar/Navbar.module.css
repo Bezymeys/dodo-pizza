@@ -37,25 +37,17 @@
 }
 
 .modal {
-<<<<<<< HEAD
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 3;
-  ;
-=======
-  background: rgba(0, 0, 0, 0.7);
->>>>>>> d7a56aded6841d73b7ba1505428fbf680485c908
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-<<<<<<< HEAD
   overflow: hidden;
   opacity: 0;
-=======
   z-index: 3;
   overflow: hidden;
->>>>>>> d7a56aded6841d73b7ba1505428fbf680485c908
   visibility: hidden;
   opacity: 0;
 }
@@ -66,7 +58,6 @@
 }
 
 .basketWrapper {
-<<<<<<< HEAD
   background-color: rgb(247, 243, 247);
   width: 470px;
   height: 100%;
@@ -74,15 +65,6 @@
   top: 0;
   right: -550px;
   transition: all 0.4s linear;
-=======
-  background: rgb(243, 243, 247);
-  width: 430px;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  right: -550px;
-  transition: all 0.3s linear;
->>>>>>> d7a56aded6841d73b7ba1505428fbf680485c908
 }
 
 .activeModal .basketWrapper {
@@ -97,17 +79,10 @@
   height: 50px;
   transform: translate(0, -50%);
   cursor: pointer;
-<<<<<<< HEAD
   transition: all 1s linear;
 }
 
 .closeModal:hover {
   transform: translate(0, -50%) rotate(720deg);
-=======
-  transition: all 0.6s linear;
-}
 
-.closeModal:hover {
-  transform: translate(0, -50%) rotate(360deg);
->>>>>>> d7a56aded6841d73b7ba1505428fbf680485c908
 }
