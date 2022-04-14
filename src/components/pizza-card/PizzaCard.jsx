@@ -1,9 +1,14 @@
+import { useDispatch } from "react-redux"
 import css from "./PizzaCard.module.css"
 
-export default function PizzaCard({ addToBasket, title, description, price, img, id, isAdmin, ...props }) {
+export default function PizzaCard({ title, description, price, img, id, isAdmin }) {
 
+  const dispatch = useDispatch();
   const onBasket = () => {
-    addToBasket({ title, description, price, img, id, ...props })
+    dispatch( {
+      type:"SET_NEW_PIZZA",
+      data:{ title, description, price, img, id}
+    })
   }
   return (
     <div className={css.card} style={{ width: "18rem" }}>

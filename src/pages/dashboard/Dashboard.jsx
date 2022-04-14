@@ -2,8 +2,10 @@ import React from 'react';
 import css from "./Dashboard.module.css";
 import PizzaCard from "../../components/pizza-card/PizzaCard.jsx";
 import { Link } from "react-router-dom"
+import { useSelector } from 'react-redux';
 
-const Dashboard = ({pizzas}) => {
+const Dashboard = () => {
+    const pizzas = useSelector( (state) => state.pizza.data )
 
     return (
         <div className='container mt-5 pizzaWrapper'>

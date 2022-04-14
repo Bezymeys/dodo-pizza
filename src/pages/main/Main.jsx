@@ -6,8 +6,11 @@ import PizzaCard from "../../components/pizza-card/PizzaCard.jsx";
 import Slidercard from "../../components/slider-card/SliderCard";
 import Halalcard from "../../components/halal-card/HalalCard";
 import Oftenordercard from "../../components/oftenorder-card/OftenOrderCard";
+import { useSelector } from "react-redux";
 
-export default function Main({ addToBasket, pizzas }) {
+export default function Main() {
+
+  const pizzas = useSelector( (state) => state.pizza.data )
   
   const nextArrow = <img src="https://cdn-user-icons.flaticon.com/68874/68874891/1649861068134.svg?token=exp=1649861969~hmac=fcef223369aa06ce549705f0f0fe10d0" alt="" />
   const prevArrow = <img src="https://cdn-user-icons.flaticon.com/68874/68874891/1649861646246.svg?token=exp=1649862547~hmac=ac74f783ba6eefa854a986399669aabe" alt="" />
@@ -16,7 +19,7 @@ export default function Main({ addToBasket, pizzas }) {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 6,
+    slidesToShow: 5,
     slidesToScroll: 2,
     nextArrow:nextArrow,
     prevArrow:prevArrow,
@@ -25,7 +28,7 @@ export default function Main({ addToBasket, pizzas }) {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
     nextArrow:nextArrow,
     prevArrow:prevArrow,
@@ -80,7 +83,7 @@ export default function Main({ addToBasket, pizzas }) {
         <h1>ПИЦЦА</h1>
         <div className={"pizzaWrapper"}>
           {
-            pizzas?.map((item) => <PizzaCard key={item.id} {...item} addToBasket={addToBasket} />)
+            pizzas?.map((item) => <PizzaCard key={item.id} {...item}/>)
           }
         </div>
       </div>
